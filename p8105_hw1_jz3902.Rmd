@@ -25,7 +25,7 @@ data("penguins", package = "palmerpenguins")
 
 Here's the first few rows of them.
 
-```{r}
+```{r variables}
 head(penguins)
 ```
 
@@ -37,12 +37,32 @@ The dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns.
 
 3.  The mean flipper length
 
-```{r}
+```{r mean_flipper_length}
 penguins %>% 
   pull(, flipper_length_mm) %>% 
   mean(, na.rm = FALSE)
 ```
 
 
+4.  A scatterplot of flipper length VS bill length
+
+Firstly, remove rows containing missing values.
+
+Then, draw and save the plot.
+
+Y is flipper length (mm), X is bill length (mm), colored by species.
+
+```{r scatterplot}
+penguins %>% 
+  drop_na() %>% 
+  ggplot() +
+  geom_point(
+    aes(x = bill_length_mm, 
+        y = flipper_length_mm, 
+        color = species)
+    )
+
+ggsave("scatterplot.png")
+```
 
 
