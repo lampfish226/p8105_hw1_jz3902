@@ -66,3 +66,70 @@ ggsave("scatterplot.png")
 ```
 
 
+## Problem 2
+
+### Create the data frame
+
+The data frame is comprised of:
+
+`norm_samp` : a random sample of size 10 from a standard normal distribution.
+
+`samp_g0` : a logical vector indicating whether elements of the sample are greater than 0.
+
+`vec_char` : a character vector of length 10.
+
+`vec_factor` : a factor vector of length 10, with 3 different factor “levels”.
+
+```{r create_df}
+df = 
+  tibble(
+    norm_samp = rnorm(n = 10),
+    samp_g0 = norm_samp > 0,
+    vec_char = sample(letters, 10, replace = TRUE),
+    vec_factor = factor(
+        sample(c("A", "B", "C"), 10, replace = TRUE)
+        )
+    )
+
+df
+
+```
+
+
+### Calculate the mean of each variable
+
+Calculate the mean with `pull()`.
+
+**Mean of numeric sample**
+
+```{r mean_normal}
+df %>% 
+  pull(norm_samp) %>% 
+  mean()
+```
+
+**Mean of logical vector**
+
+```{r mean_logical}
+df %>% 
+  pull(samp_g0) %>% 
+  mean()
+```
+
+**Mean of character vector**
+
+```{r mean_char}
+df %>% 
+  pull(vec_char) %>% 
+  mean()
+```
+
+**Mean of factor vector**
+
+```{r mean_factor}
+df %>% 
+  pull(vec_factor) %>% 
+  mean()
+```
+
+The mean can be computed on numeric sample and logical vector, but not on character and factor vector.
