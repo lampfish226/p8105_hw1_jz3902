@@ -7,11 +7,42 @@ output: github_document
 
 This is HW1 of P8105.
 
+```{r setup, echo = FALSE, message = FALSE}
+library(tidyverse)
+```
+
 ## Problem 1
 
-Load the `penguins` dataset:
+### Load the `penguins` dataset
 
-```{r}
+```{r load_dataset}
 data("penguins", package = "palmerpenguins")
 ```
+
+### Description of the `penguins` dataset
+
+1.  Variable names and values
+
+Here's the first few rows of them.
+
+```{r}
+head(penguins)
+```
+
+
+2.  Size of the dataset
+
+The dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+
+
+3.  The mean flipper length
+
+```{r}
+penguins %>% 
+  pull(, flipper_length_mm) %>% 
+  mean(, na.rm = FALSE)
+```
+
+
+
 
