@@ -23,9 +23,10 @@ data("penguins", package = "palmerpenguins")
 
 **Variable names and values**
 
-Here's the first few rows of them.
+Here are variable names and the first few rows of them.
 
 ```{r variables}
+names(penguins)
 head(penguins)
 ```
 
