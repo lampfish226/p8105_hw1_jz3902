@@ -1,0 +1,17 @@
+---
+title: "p8105_hw1_jz3902"
+author: "Jinghan Zhao"
+date: "2024-09-21"
+output: github_document
+---
+
+This is HW1 of P8105.
+
+## Problem 1
+
+Load the `penguins` dataset:
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
