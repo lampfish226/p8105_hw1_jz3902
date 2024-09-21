@@ -21,7 +21,7 @@ data("penguins", package = "palmerpenguins")
 
 ### Description of the `penguins` dataset
 
-1.  Variable names and values
+**Variable names and values**
 
 Here's the first few rows of them.
 
@@ -30,12 +30,12 @@ head(penguins)
 ```
 
 
-2.  Size of the dataset
+**Size of the dataset**
 
 The dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns.
 
 
-3.  The mean flipper length
+**The mean flipper length**
 
 ```{r mean_flipper_length}
 penguins %>% 
@@ -44,7 +44,7 @@ penguins %>%
 ```
 
 
-4.  A scatterplot of flipper length VS bill length
+**A scatterplot of flipper length VS bill length**
 
 Firstly, remove rows containing missing values.
 
@@ -150,9 +150,13 @@ df %>%
   as.numeric()
 ```
 
-The logical variables can be converted to numeric as value 0 or 1, and the mean can be calculated.
+By converting to numeric, the mean can be calculated for logical and factor variables, but not for character variables.
 
-The character variables cannot be converted to numeric, and the mean cannot be calculated as well.
+**Discussion:**
+
+The logical variables can be converted to numeric as value 0 or 1, so the mean can be calculated.
+
+The character variables cannot be converted to numeric, and the mean cannot be calculated.
 
 The factor variables can be converted to numeric values, but the mean cannot be calculated. Calculating the mean of factor variables may not be of practical significance, and the factor "levels" should not be analyzed by simple addition and subtraction operations.
 
