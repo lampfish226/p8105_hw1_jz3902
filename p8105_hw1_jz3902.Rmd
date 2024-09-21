@@ -133,3 +133,26 @@ df %>%
 ```
 
 The mean can be computed on numeric sample and logical vector, but not on character and factor vector.
+
+### Convert variables to numeric
+
+```{r convert_var, warning = FALSE, results = 'hide'}
+df %>% 
+  pull(samp_g0) %>% 
+  as.numeric()
+
+df %>% 
+  pull(vec_char) %>% 
+  as.numeric()
+
+df %>% 
+  pull(vec_factor) %>% 
+  as.numeric()
+```
+
+The logical variables can be converted to numeric as value 0 or 1, and the mean can be calculated.
+
+The character variables cannot be converted to numeric, and the mean cannot be calculated as well.
+
+The factor variables can be converted to numeric values, but the mean cannot be calculated. Calculating the mean of factor variables may not be of practical significance, and the factor "levels" should not be analyzed by simple addition and subtraction operations.
+
